@@ -1,8 +1,8 @@
 from selene import have
 
-from QAGURU_hw_6_12.pages.resourses import RegistrationPage
+from pages.resourses import RegistrationPage
 import allure
-from QAGURU_hw_6_12.test.conftest import setup_browser
+from test.conftest import setup_browser
 
 
 @allure.title("Successful fill form")
