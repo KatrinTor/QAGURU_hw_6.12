@@ -1,12 +1,13 @@
 import os
 
 import pytest
+from allure_commons._allure import attach
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
 from dotenv import load_dotenv
 from selene import browser as s
-from utils import attach
+
 
 DEFAULT_BROWSER_VERSION = "100.0"
 
