@@ -1,5 +1,5 @@
 import allure
-from util.resourses import RegistrationPage
+from resourses import RegistrationPage
 from conftest import setup_browser
 
 
