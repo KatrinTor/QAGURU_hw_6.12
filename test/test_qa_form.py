@@ -1,17 +1,16 @@
 import allure
-from resourses import RegistrationPage
+from pages.resourses import RegistrationPage
 from conftest import setup_browser
 
 
 @allure.title("Successful fill form")
-def test_fill_form(setup_browser):
+def test_fill_form():
     browser = setup_browser
-
 
     registration_page = RegistrationPage()
     with allure.step('Open'):
         registration_page.open()
-       #browser.element(".practice-form-wrapper").should(have.text("Student Registration Form"))
+    #browser.element(".practice-form-wrapper").should(have.text("Student Registration Form"))
     with allure.step('Fill personal data'):
         registration_page.fill_full_name('Katrin', 'Torsunova')
         registration_page.fill_email('Katrin@test.ru')
