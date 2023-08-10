@@ -19,6 +19,7 @@ first_name='Kat',
     city='Delhi'
 )
 
+
 @allure.title('Successful fill form')
 def test_registration_form(setup_browser):
     registration_page = RegistrationPage()

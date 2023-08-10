@@ -1,4 +1,4 @@
-import os
+
 from selene import browser, have, command, be
 
 from test.conftest import path
