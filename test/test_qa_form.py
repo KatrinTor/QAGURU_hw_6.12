@@ -1,6 +1,7 @@
 import allure
-from pages.resourses import RegistrationPage
+
 from conftest import setup_browser
+from pages.resourses import RegistrationPage
 
 
 @allure.title("Successful fill form")
