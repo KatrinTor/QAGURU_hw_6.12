@@ -6,8 +6,6 @@ from pages.resourses import RegistrationPage
 
 @allure.title("Successful fill form")
 def test_fill_form():
-    browser = setup_browser
-
     registration_page = RegistrationPage()
     with allure.step('Open'):
         registration_page.open()

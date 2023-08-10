@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
 from dotenv import load_dotenv
-
+from selene import browser as s
 from utils import attach
 
 DEFAULT_BROWSER_VERSION = "100.0"
@@ -45,6 +45,7 @@ def setup_browser(request):
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options
     )
+    driver.get_window_size(width=1900, heigh=1080)
     browser = Browser(Config(driver))
 
     yield browser
