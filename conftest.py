@@ -41,9 +41,9 @@ def setup_browser(request):
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
 
-    driver = webdriver.Remote(
-       f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub"
-    )
+    driver = (webdriver.Remote(
+       'https://user1:1234@selenoid.autotests.cloud/wd/hub'
+    ))
     driver.get_window_size(width=1900, heigh=1080)
     browser = Browser(Config(driver))
 
