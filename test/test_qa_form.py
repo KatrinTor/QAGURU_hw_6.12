@@ -1,11 +1,11 @@
 from selene import have
 import allure
 from pages.resourses import RegistrationPage
-from test.conftest import setup_browser
+from conftest import setup_browser
 
 
 @allure.title("Successful fill form")
-def test_fill_form():
+def test_fill_form(setup_browser):
     browser = setup_browser
 
 
