@@ -1,38 +1,33 @@
-import allure
+import datetime
 
-from conftest import setup_browser
+import allure
+from models.users import User
 from pages.resourses import RegistrationPage
 
+katrin = User(
+first_name='Kat',
+    last_name='Kat',
+    email='test@test.by',
+    gender='Female',
+    phone_number='8967625366',
+    date_of_birth=datetime.date(1994, 11, 15),
+    hobbies='Reading',
+    subjects='Biology',
+    image='trusost.jpg',
+    current_address='Kronverksky 4000',
+    state='NCR',
+    city='Delhi'
+)
 
-@allure.title("Successful fill form")
-def test_fill_form():
+@allure.title('Successful fill form')
+def test_registration_form(setup_browser):
     registration_page = RegistrationPage()
-    with allure.step('Open'):
+
+    with allure.step('Open registrations form'):
         registration_page.open()
-    #browser.element(".practice-form-wrapper").should(have.text("Student Registration Form"))
-    with allure.step('Fill personal data'):
-        registration_page.fill_full_name('Katrin', 'Torsunova')
-        registration_page.fill_email('Katrin@test.ru')
-        registration_page.choose_gender('Female')
-        registration_page.fill_user_number('8967625366')
-        registration_page.fill_birthdate(1994, 'November', 15)
-        registration_page.set_subject('B')
-        registration_page.select_hobbie('Reading')
-        registration_page.attach_file('trusost.jpg')
-        registration_page.fill_address('ul. Kronverksky 49')
-        registration_page.select_state('Haryana')
-        registration_page.select_city('Karnal')
-    with allure.step('Click submit button'):
-        registration_page.click_submit_batton()
-    with allure.step('Assert personal data'):
-        registration_page.should_have(
-            'Katrin Torsunova',
-            'Katrin@test.ru',
-            'Female',
-            '8967625366',
-            '15 November,1994',
-            'Biology',
-            'Reading',
-            'trusost.jpg',
-            'ul. Kronverksky 49',
-            'Haryana Karnal')
+
+    with allure.step('Fill form Users'):
+        registration_page.register(katrin)
+
+    with allure.step('Check form results'):
+        registration_page.should_have_registered(katrin)
