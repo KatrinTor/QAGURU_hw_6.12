@@ -1,6 +1,5 @@
-from selene import have
 import allure
-from resourses import RegistrationPage
+from util.resourses import RegistrationPage
 from conftest import setup_browser
 
 
