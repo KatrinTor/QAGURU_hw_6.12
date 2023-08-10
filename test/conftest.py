@@ -21,7 +21,7 @@ def pytest_addoption(parser):
 
 
 def path(file_name):
-    return str(Path(test.__file__).parent.joinpath(f'test/resources/{file_name}').absolute())
+    return str(Path(test.__file__).parent.joinpath(f'resources/{file_name}').absolute())
 
 
 @pytest.fixture(scope='session', autouse=True)
