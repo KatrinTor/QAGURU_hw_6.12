@@ -1,7 +1,7 @@
 import os
 
 import pytest
-from util import attach
+from QAGURU_hw_6_12.test import attach
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
