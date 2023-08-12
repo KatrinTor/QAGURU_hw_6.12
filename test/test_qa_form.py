@@ -21,7 +21,7 @@ first_name='Kat',
 
 
 @allure.title('Successful fill form')
-def test_registration_form(setup_browser):
+def test_fill_form(setup_browser):
     registration_page = RegistrationPage()
 
     with allure.step('Open registrations form'):
