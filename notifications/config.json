@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "img.png",
+    "project": "",
+    "environment": "test",
+    "comment": "",
+    "reportLink": "",
+    "language": "ru",
+    "allureFolder": "",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6553134583:AAFyJ_5Rnqi9Vy9Uu4mmoIi1xFJXv9_MgJM",
+    "chat": "-1001935359801",
+    "replyTo": ""
+  }
+}
