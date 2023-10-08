@@ -5,7 +5,7 @@ from models.users import User
 from pages.resourses import RegistrationPage
 
 katrin = User(
-first_name='Kat',
+    first_name='Kat',
     last_name='Kat',
     email='test@test.by',
     gender='Female',
