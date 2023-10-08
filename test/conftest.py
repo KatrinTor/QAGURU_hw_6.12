@@ -4,11 +4,11 @@ from pathlib import Path
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import browser
+from selene import Browser, Config, browser
 from dotenv import load_dotenv
 from utils import attach
 
-import test
+import tests
 
 DEFAULT_BROWSER_VERSION = "100.0"
 
@@ -21,7 +21,7 @@ def pytest_addoption(parser):
 
 
 def path(file_name):
-    return str(Path(test.__file__).parent.joinpath(f'resources/{file_name}').absolute())
+    return os.path.abspath(os.path.join(os.path.dirname(tests.__file__), f'resources/{file_name}'))
 
 
 @pytest.fixture(scope='session', autouse=True)
@@ -29,11 +29,11 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
     browser.config.base_url = 'https://demoqa.com'
-    browser.config.window_width = 1920
-    browser.config.window_height = 1080
+    browser.config.window_width = 1080
+    browser.config.window_height = 1920
 
     browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
