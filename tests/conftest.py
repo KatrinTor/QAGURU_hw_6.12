@@ -6,7 +6,6 @@ from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-import tests
 from utils import attach as attach
 
 DEFAULT_BROWSER_VERSION = "100.0"
@@ -20,7 +19,7 @@ def pytest_addoption(parser):
 
 
 def path(file_name):
-    return os.path.abspath(os.path.join(os.path.dirname(tests.__file__), f'resources/{file_name}'))
+    return os.path.abspath(os.path.join(os.path.dirname('tests'.__file__), f'resources/{file_name}'))
 
 
 @pytest.fixture(scope='session', autouse=True)
