@@ -1,5 +1,4 @@
 import datetime
-
 import allure
 from models.users import User
 from pages.resourses import RegistrationPage

@@ -1,14 +1,13 @@
 import os
-from pathlib import Path
 
 import pytest
+from dotenv import load_dotenv
+from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selene import browser
-from dotenv import load_dotenv
 
-
-from .utils import attach as attach
+import tests
+from utils import attach as attach
 
 DEFAULT_BROWSER_VERSION = "100.0"
 
