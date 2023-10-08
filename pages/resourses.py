@@ -1,7 +1,7 @@
 
 from selene import browser, have, command, be
 
-from test.conftest import path
+from tests.conftest import path
 from models.users import User
 
 

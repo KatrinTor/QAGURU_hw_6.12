@@ -7,7 +7,7 @@ from pages.resourses import RegistrationPage
 katrin = User(
     first_name='Kat',
     last_name='Kat',
-    email='test@test.by',
+    email='tests@tests.by',
     gender='Female',
     phone_number='8967625366',
     date_of_birth=datetime.date(1994, 11, 15),
